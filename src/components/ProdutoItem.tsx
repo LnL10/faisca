@@ -34,7 +34,7 @@ export default function ProdutoItem(props: ProdutoItemProps){
                 </div>
                 <div>
                     <button className="botao flex w-full justify-center gap-2" 
-                        onClick={()=>props.comprar(produto)}>
+                        onClick={()=>props.comprar && props.comprar(produto)}>
                         <IconShoppingCart/> Comprar
                         </button>
                 </div>
