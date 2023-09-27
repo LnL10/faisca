@@ -1,27 +1,23 @@
-import CarrinhoContext from "@/context/CarrinhoContext";
-import Produto from "@/models/Produto";
-import Moeda from "@/utils/Moeda";
-import { IconShoppingCart } from "@tabler/icons-react";
-import Image from "next/image";
-import Link from "next/link";
-import {useContext} from "react"
-
-interface ProdutoItemProps{
-    produto: Produto
-    comprar?: (produto: Produto)=> void
-}
+import Moeda from "@/utils/Moeda"
+import { IconShoppingCart } from "@tabler/icons-react"
+import Image from "next/image"
+import Link from "next/link"
 
 
-export default function ProdutoItem(props: ProdutoItemProps){
-    const {selecionarProduto} = useContext(CarrinhoContext)
+export default function ProdutoDetalhe(props: any){
+
     const {produto} = props
     return(
+        
+
         <div className={`
             flex flex-col rounded-md
             border border-zinc-200
-            p-1 bg-zinc-900
+            p-1 bg-zinc-900 w-60
 
         `}>
+            
+            
             <Image 
                 src={produto.imagem} 
                 alt="Imagem"
@@ -38,12 +34,13 @@ export default function ProdutoItem(props: ProdutoItemProps){
                     <div>{produto.descricao}</div>
                 </div>
                 <div>
-                    <button className="botao flex w-full justify-center gap-2" 
-                        onClick={()=>selecionarProduto && selecionarProduto(produto) }>
-                        <IconShoppingCart/> Ver Produto
-                    </button>
+                    
+                    <button onClick={()=>props.comprar && props.comprar(produto)} className="botao">Adicionar ao Carrinho</button>
+                    <IconShoppingCart/> Comprar
+                    
                 </div>
             </div>
+            <Link href="/produtos/produtos">Voltar</Link>
         </div>
     )
 }

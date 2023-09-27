@@ -11,14 +11,12 @@ export default function PaginaProdutos(){
 
     
     return(
-        
         <div className={`
             flex flex-col gap-10 justify-center items-center pt-5
-        `}>
-            <Carrinho itens ={itens}/>
-            <Link href="/carrinho" className="botao">Ver Carrinho</Link>
+        `}> 
             <ListaProdutos produtos={produtos} comprar={adicionarProduto}/>
-            
+            <Link href="/">Home</Link>
+            <Link href="/produtos/verProduto    ">Ver Produto</Link>
         </div>
     )
 }

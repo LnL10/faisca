@@ -2,9 +2,12 @@ import ItemCarrinho from "@/models/ItemCarrinho";
 import CarrinhoItem from "./CarrinhoItem";
 import {IconCircleX} from "@tabler/icons-react"
 import Moeda from "@/utils/Moeda";
+import Link from "next/link";
+import Produto from "@/models/Produto";
 
 interface CarrinhoProps{
     itens: ItemCarrinho[]
+    remover?: (produto: Produto)=> void
 }
 
 
@@ -13,7 +16,7 @@ export default function Carrinho(props: CarrinhoProps){
     const total = props.itens.reduce((soma,item)=> {return soma + item.quantidade * item.produto.preco}, 0)
 
     return(
-        <div className="flex flex-col border borde-white rounded-md overflow-hidden w-4/5 bg-zinc-800 " >
+        <div className="flex flex-col border border-white rounded-md overflow-hidden w-4/5 bg-zinc-800 " >
             <div className="flex justify-between items-centerbg-zinc-800 text-3xl p-3">
                 <span>Carrinho</span>
                 <span>{Moeda.formatar(total)}</span>
@@ -30,7 +33,9 @@ export default function Carrinho(props: CarrinhoProps){
                         return <CarrinhoItem key={i} {...item}/>
                     })
                 )}
-            
+                <div className="justify-end flex w-full">
+                    <Link href="/carrinho" className="botao">Ver Carrinho</Link>
+                </div>
             </div>
         </div>
     )
