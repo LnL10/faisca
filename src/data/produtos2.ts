@@ -1,4 +1,5 @@
 import Produto from "@/models/Produto";
+import ImageReal from "./images/teste.jpg"
 
 const produtos2: Produto[]=[
     {
@@ -6,14 +7,14 @@ const produtos2: Produto[]=[
         nome:"Real Madrid",
         preco:25,
         descricao:"Camisola Real Madrid",
-        imagem:'https://source.unsplash.com/featured/300x200?realmadrid',
+        imagem: ImageReal,
     },
     {
         id:9,
         nome:"Barcelona",
         preco:25,
         descricao:"Camisola Barcelona",
-        imagem:'https://source.unsplash.com/featured/300x200?barcelona',
+        imagem:ImageReal,
     },
     
 ]

@@ -14,11 +14,11 @@ export default function Header(){
         
             <div>
                 <ul className="flex space-x-4 font-mono justify-around text-black">
-                    <li className="botaoHeader"><Link href="/">Inicio</Link></li>
+                    <li><Link  className="botaoHeader" href="/">Inicio</Link></li>
                     |
-                    <li className="botaoHeader"><Link href="/produtos">Produtos</Link></li>
+                    <li><Link  className="botaoHeader" href="/produtos">Produtos</Link></li>
                     |
-                    <li className="botaoHeader"><Link href="/produtos">Contactos</Link></li>
+                    <li><Link  className="botaoHeader" href="/produtos">Contactos</Link></li>
                 </ul>
             </div>          
         </div>

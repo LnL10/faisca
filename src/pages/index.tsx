@@ -13,8 +13,9 @@ export default function Home() {
   const {adicionarProduto} = useContext(CarrinhoContext)
   
   return (
-      <div  className='flex flex-col'>
+      <div  className='flex flex-col bg-white'>
           <Header/>
+          <div className='flex w-screen bg-black h-52 justify-center items-center'> UMA IMAGEM QUALQUER OU SLIDER</div>
           
           <span className='flex justify-center w-full'>LA LIGA</span>
           <ListaProdutos produtos={produtos2} comprar={adicionarProduto}/>

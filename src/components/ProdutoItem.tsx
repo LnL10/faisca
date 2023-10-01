@@ -17,30 +17,26 @@ export default function ProdutoItem(props: ProdutoItemProps){
     const {produto} = props
     return(
         <div className={`
-            flex flex-col rounded-md
-            border border-zinc-200
-            p-1 bg-zinc-900
+            flex flex-col rounded-xl 
+            border border-black
+            p-2
 
         `}>
             <Image 
                 src={produto.imagem} 
                 alt="Imagem"
-                width={300}
-                height={300}
+                width={200}
+                height={200}
                 className="rounded-md"
             />
-            <div className="flex flex-col gap-3">
-                <div className="flex items-center justify-between ">
-                <div className="text-2xl font-black">{produto.nome}</div>
-                <div className="text-green-300 font-bold">{Moeda.formatar(produto.preco)}</div>
-                </div>
-                <div>
-                    <div>{produto.descricao}</div>
-                </div>
+            <div className="flex flex-col justify-center items-center">
+                
+                <div className="text-lg text-black font-semibold">{produto.nome}</div>
+                <div className="text-green-500 font-bold">{Moeda.formatar(produto.preco)}</div>
+
                 <div>
                     <button className="botao flex w-full justify-center gap-2" 
-                        onClick={()=>selecionarProduto && selecionarProduto(produto)}>
-                    
+                        onClick={()=>selecionarProduto && selecionarProduto(produto)}>    
                         <IconShoppingCart/> Ver Produto
                     </button>
                 </div>
