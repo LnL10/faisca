@@ -39,7 +39,8 @@ export default function ProdutoItem(props: ProdutoItemProps){
                 </div>
                 <div>
                     <button className="botao flex w-full justify-center gap-2" 
-                        onClick={()=>selecionarProduto && selecionarProduto(produto) }>
+                        onClick={()=>selecionarProduto && selecionarProduto(produto)}>
+                    
                         <IconShoppingCart/> Ver Produto
                     </button>
                 </div>

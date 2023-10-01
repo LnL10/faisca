@@ -1,5 +1,3 @@
-import Carrinho from "@/components/Carrinho";
-import CarrinhoItem from "@/components/CarrinhoItem";
 import CarrinhoCompra from "@/components/compra/CarrinhoCompra";
 import CarrinhoContext from "@/context/CarrinhoContext";
 import Moeda from "@/utils/Moeda";
@@ -10,7 +8,7 @@ export default function PaginaEnvio(){
     const total = itens.reduce((soma,item)=> {return soma + item.quantidade * item.produto.preco}, 0)
     return(
         <div className="flex w-screen h-screen">
-            <div className="flex w-2/3 bg-red-500 border border-red-500 justify-center items-center">
+            <div className="flex w-2/3 bg-white-200 border border-zinc-700 justify-center items-center">
                 <div className="flex w-4/5 justify-center items-center">
                 <form className="flex flex-col gap-4 ">
                     <span className="font-black">Contacto</span>
@@ -59,18 +57,18 @@ export default function PaginaEnvio(){
             </div>
 
 
-            <div className="flex flex-col w-1/3 bg-blue-500 border border-white">
-                <div className="flex flex-col items-center w-full">
+            <div className="flex flex-col w-1/3 bg-blue-300 border border-zinc-700">
+                <div className="flex flex-col items-center w-full pt-4 gap-2">
                     {itens.map((item,i) => {
                             return <CarrinhoCompra item={item} key={i}/>
                     })}
                 </div>
-                <div className="flex flex-col">
-                    <div className="flex justify-between">
+                <div className="flex flex-col items-center gap-1 pt-10">
+                    <div className="flex justify-between w-2/4">
                         <span>Envio</span>
                         <span>{Moeda.formatar(0)}</span>
                     </div>
-                    <div className="flex justify-between">
+                    <div className="flex justify-between w-2/4">
                         <span>Total</span>
                         <span>{Moeda.formatar(total)}</span>
                     </div>

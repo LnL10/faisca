@@ -34,7 +34,6 @@ export default function ProdutoDetalhe(props: any){
                     <div>{produto.descricao}</div>
                 </div>
                 <div>
-                    
                     <button onClick={()=>props.comprar && props.comprar(produto)} className="botao">Adicionar ao Carrinho</button>
                     <IconShoppingCart/> Comprar
                     

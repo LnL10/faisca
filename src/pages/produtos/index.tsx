@@ -7,7 +7,7 @@ import Link from "next/link";
 import {useContext} from "react"
 
 export default function PaginaProdutos(){
-   const {itens,adicionarProduto} = useContext(CarrinhoContext)
+   const {adicionarProduto} = useContext(CarrinhoContext)
 
     
     return(
@@ -16,7 +16,7 @@ export default function PaginaProdutos(){
         `}> 
             <ListaProdutos produtos={produtos} comprar={adicionarProduto}/>
             <Link href="/">Home</Link>
-            <Link href="/produtos/verProduto    ">Ver Produto</Link>
+            <Link href="/produtos/verProduto">Ver Produto</Link>
         </div>
     )
 }
