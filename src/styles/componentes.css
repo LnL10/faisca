@@ -8,3 +8,8 @@
     @apply bg-white text-zinc-500;
     @apply font-bold py-2 px-4 rounded;
 }
+
+.botaoHeader{
+    @apply hover:bg-red-500 rounded-md px-10 py-2;
+    @apply border border-black
+}

@@ -1,5 +1,3 @@
-import Background from "@/components/Background";
-import Carrinho from "@/components/Carrinho";
 import ListaProdutos from "@/components/ListaProdutos";
 import CarrinhoContext from "@/context/CarrinhoContext";
 import produtos from "@/data/produtos"

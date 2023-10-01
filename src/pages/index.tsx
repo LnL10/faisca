@@ -15,6 +15,7 @@ export default function Home() {
   return (
       <div  className='flex flex-col'>
           <Header/>
+          
           <span className='flex justify-center w-full'>LA LIGA</span>
           <ListaProdutos produtos={produtos2} comprar={adicionarProduto}/>
           <span className='flex justify-center w-full'>LIGA PORTUGUESA</span>
