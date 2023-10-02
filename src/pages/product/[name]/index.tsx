@@ -15,8 +15,12 @@ export default function VerProduto(){
     
     return(
         <Layout>
+            <div className="flex justify-center ">
             <ProdutoDetalhe produto={itemSelecionado} comprar={adicionarProduto}/>
-            <Link className="botao" href="/compra/envio">Finalizar Compra</Link>
+            </div>
+            
+            <Link className="botao justify-end" href="/compra/envio">Finalizar Compra</Link>
+            
         </Layout>
     )
 }

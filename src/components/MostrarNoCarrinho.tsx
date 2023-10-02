@@ -35,10 +35,9 @@ export default function MostrarNoCarrinho(props: MostrarNoCarrinhoProps){
                 <div className="text-2xl font-black">{produto.produto.nome}</div>
                 <div className="text-green-300 font-bold">{Moeda.formatar(produto.produto.preco)}</div>
                 </div>
-                <div className="flex justify-between">
-                    <div>{produto.produto.descricao}</div>
-                    <button onClick={()=>props.remover && props.remover(produto.produto)}><IconX/></button>
-                </div>
+                
+                <button className="flex justify-center items-center hover:bg-zinc-400"onClick={()=>props.remover && props.remover(produto.produto)}><IconX size={20}/>Remover do Carrinho<IconX size={20}/></button>
+                
             </div>
         
 

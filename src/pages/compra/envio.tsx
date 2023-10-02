@@ -1,4 +1,5 @@
 import CarrinhoCompra from "@/components/compra/CarrinhoCompra";
+import Layout from "@/components/estrutura/Layout";
 import CarrinhoContext from "@/context/CarrinhoContext";
 import Moeda from "@/utils/Moeda";
 import { useContext } from "react";
@@ -7,8 +8,9 @@ export default function PaginaEnvio(){
     const {itens} = useContext(CarrinhoContext)
     const total = itens.reduce((soma,item)=> {return soma + item.quantidade * item.produto.preco}, 0)
     return(
+        <Layout>
         <div className="flex w-screen h-screen">
-            <div className="flex w-2/3 bg-white-200 border border-zinc-700 justify-center items-center">
+            <div className="flex w-2/3 bg-white-200 border border-zinc-700 justify-center items-center bg-black">
                 <div className="flex w-4/5 justify-center items-center">
                 <form className="flex flex-col gap-4 ">
                     <span className="font-black">Contacto</span>
@@ -75,5 +77,6 @@ export default function PaginaEnvio(){
                 </div>
             </div>
         </div>
+        </Layout>
     )
 }
