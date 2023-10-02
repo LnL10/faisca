@@ -1,7 +1,7 @@
 import ItemCarrinho from "@/models/ItemCarrinho";
 import Produto from "@/models/Produto";
 import Moeda from "@/utils/Moeda";
-import { IconShoppingCart, IconX } from "@tabler/icons-react";
+import { IconShoppingCart, IconTrash, IconX } from "@tabler/icons-react";
 import Image from "next/image";
 
 interface MostrarNoCarrinhoProps{
@@ -36,7 +36,7 @@ export default function MostrarNoCarrinho(props: MostrarNoCarrinhoProps){
                 <div className="text-green-300 font-bold">{Moeda.formatar(produto.produto.preco)}</div>
                 </div>
                 
-                <button className="flex justify-center items-center hover:bg-zinc-400"onClick={()=>props.remover && props.remover(produto.produto)}><IconX size={20}/>Remover do Carrinho<IconX size={20}/></button>
+                <button className="flex justify-center items-center rounded-md hover:bg-zinc-400"onClick={()=>props.remover && props.remover(produto.produto)}>Remover do Carrinho<IconTrash size={20}/></button>
                 
             </div>
         

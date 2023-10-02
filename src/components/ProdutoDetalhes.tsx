@@ -11,7 +11,7 @@ import { useState } from "react"
 export default function ProdutoDetalhe(props: any){
 
     const {produto} = props
-    const [tamanho,setTamanho] = useState('Selecionar Tamanho');
+    const [tamanho,setTamanho] = useState('');
     return(
         
 
@@ -27,7 +27,7 @@ export default function ProdutoDetalhe(props: any){
             />
             </div>
 
-            <div className="flex flex-col gap-3 text-black justify-center">
+            <div className="flex flex-col gap-3 text-black">
                 
                 <span className="text-2xl font-black">{produto.nome}</span>
                 <div className="flex flex-col">

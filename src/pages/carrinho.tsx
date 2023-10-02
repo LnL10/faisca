@@ -11,15 +11,11 @@ export default function PaginCarrinho(){
 
     return(
         <Layout >
-            <div className="flex flex-col justify-center">
+            <div className="flex flex-col items-center pt-6 pb-10 h-screen">
                 
                 <Carrinho itens={itens}/>
-                <ListaProdutosCarrinho produtos={itens} remover={removerProduto}/>
-                
-                <Link href="/compra/envio" className="botao">Finalizar Compra</Link>
 
-                <Link href="/produtos" className="botao">Voltar a Comprar</Link>
-                
+                <ListaProdutosCarrinho produtos={itens} remover={removerProduto}/>
             </div>
         </Layout>
     )

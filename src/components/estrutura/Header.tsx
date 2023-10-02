@@ -18,7 +18,7 @@ export default function Header(){
             </div>
         
             <div>
-                <ul className="flex space-x-4 font-mono justify-around text-black">
+                <ul className="flex space-x-4 font-mono justify-evenly text-black">
                     <li><Link  className="botaoHeader" href="/">Inicio</Link></li>
                     |
                     <li><Link  className="botaoHeader" href="/produtos">Produtos</Link></li>
