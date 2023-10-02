@@ -1,4 +1,7 @@
-export default function Informacoes(){
+import { useState } from "react";
+
+export default function Informacoes(props:any){
+
     return(
         <div>
             <div className="flex justify-center items-center">
@@ -45,7 +48,7 @@ export default function Informacoes(){
                                 <input type="text" className="ph" placeholder="Telefone"/>
                         </label>
     
-                        <input type="submit" className="botao bg-black" value="Prosseguir para o pagamento" />
+                        <input type="submit" className="botao bg-black" value="Prosseguir para o pagamento" onClick={props.onComplete}/>
                     </form>
                     </div>
 

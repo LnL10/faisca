@@ -5,11 +5,23 @@ import CarrinhoCompra from "@/components/compra/CarrinhoCompra";
 import Layout from "@/components/estrutura/Layout";
 import CarrinhoContext from "@/context/CarrinhoContext";
 import Moeda from "@/utils/Moeda";
-
+import { useContext,useState } from "react";
 
 export default function PaginaEnvio(){
     const {itens} = useContext(CarrinhoContext)
     const total = itens.reduce((soma,item)=> {return soma + item.quantidade * item.produto.preco}, 0)
+    const [currentStep, setCurrentStep] = useState('informacoes');
+
+    const handleInformacoesComplete = () => {
+      setCurrentStep('pagamento');
+    };
+    const handleInformacoes= () => {
+        setCurrentStep('informacoes');
+      };
+  
+    const handlePagamentoComplete = () => {
+      setCurrentStep('confirmacao');
+    };
 
     
     return(
@@ -20,10 +32,19 @@ export default function PaginaEnvio(){
             
             <div className="flex flex-col w-2/3 bg-white-200 border border-zinc-700 justify-center items-center bg-white text-black">
                 
-                <span className="text-black pb-16 ">INFORMAÇÕES - PAGAMENTO - CONFIRMAÇÃO</span> 
-                <Informacoes/>
-                <Pagamento/>
-                <Confirmacao/>
+            <span className="text-black pb-16 ">
+                <span className={currentStep === 'informacoes' ? 'underline' : ''}>INFORMAÇÕES</span> - 
+                <span className={currentStep === 'pagamento' ? 'underline' : ''}> PAGAMENTO</span> - 
+                <span className={currentStep === 'confirmacao' ? 'underline' : ''}> CONFIRMAÇÃO</span>
+            </span>
+                {currentStep === 'informacoes' && (
+                    <Informacoes onComplete={handleInformacoesComplete} />
+                )}
+                {currentStep === 'pagamento' && (
+                    <Pagamento onComplete={handlePagamentoComplete} back={handleInformacoes}/>
+                )}
+
+      {currentStep === 'confirmacao' && <Confirmacao />}
             </div>
 
 
