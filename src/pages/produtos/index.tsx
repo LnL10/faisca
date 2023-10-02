@@ -1,4 +1,5 @@
 import ListaProdutos from "@/components/ListaProdutos";
+import Layout from "@/components/estrutura/Layout";
 import CarrinhoContext from "@/context/CarrinhoContext";
 import produtos from "@/data/produtos"
 import Link from "next/link";
@@ -9,6 +10,7 @@ export default function PaginaProdutos(){
 
     
     return(
+        <Layout>
         <div className={`
             flex flex-col gap-10 justify-center items-center pt-5
         `}> 
@@ -16,5 +18,6 @@ export default function PaginaProdutos(){
             <Link href="/">Home</Link>
             <Link href="/produtos/verProduto">Ver Produto</Link>
         </div>
+        </Layout>
     )
 }

@@ -13,3 +13,10 @@
     @apply hover:bg-red-500 rounded-md px-10 py-2;
     @apply border border-black
 }
+
+.pergunta{
+    @apply text-black font-black;
+    @apply hover:bg-zinc-200;
+    @apply hover:underline;
+    @apply p-5 select-none flex justify-between;
+}

@@ -1,5 +1,6 @@
 import Carrinho from "@/components/Carrinho";
 import ProdutoDetalhe from "@/components/ProdutoDetalhes";
+import Layout from "@/components/estrutura/Layout";
 import CarrinhoContext from "@/context/CarrinhoContext";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -13,11 +14,9 @@ export default function VerProduto(){
     const {name} = router.query;
     
     return(
-        <div>
-            <Carrinho itens ={itens}/>
+        <Layout>
             <ProdutoDetalhe produto={itemSelecionado} comprar={adicionarProduto}/>
-            <Link href="/compra/envio">Finalizar Compra</Link>
-            
-        </div>
+            <Link className="botao" href="/compra/envio">Finalizar Compra</Link>
+        </Layout>
     )
 }

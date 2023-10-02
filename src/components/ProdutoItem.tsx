@@ -20,6 +20,8 @@ export default function ProdutoItem(props: ProdutoItemProps){
             flex flex-col rounded-xl 
             border border-black
             p-2
+            hover:bg-zinc-300
+            
 
         `}>
             <Image 
