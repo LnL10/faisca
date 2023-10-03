@@ -3,6 +3,7 @@ import { IconShoppingCart } from "@tabler/icons-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
+import CarrinhoPopUp from "./Carrinho/CarrinhoPopUp"
 
 
 
@@ -12,6 +13,20 @@ export default function ProdutoDetalhe(props: any){
 
     const {produto} = props
     const [tamanho,setTamanho] = useState('');
+    const [mostrarPopup, setMostrarPopup] = useState(false);
+
+    const handleAdicionarAoCarrinho = () => {
+        if (props.comprar) {
+          props.comprar(produto);
+          setMostrarPopup(true);
+        }
+      };
+    
+      const fecharPopup = () => {
+        setMostrarPopup(false);
+      };
+
+      
     return(
         
 
@@ -46,8 +61,13 @@ export default function ProdutoDetalhe(props: any){
                 </select>
                     
                 
-                <button onClick={()=>props.comprar && props.comprar(produto)} className="botao flex gap-2">Adicionar ao Carrinho <IconShoppingCart/></button>
-                     
+                <button onClick={handleAdicionarAoCarrinho} className="botao flex gap-2 ">Adicionar ao Carrinho <IconShoppingCart/></button>
+                
+            </div>
+            <div className="fixed top-[35%] text-black right-10">
+                {mostrarPopup && (
+                    <CarrinhoPopUp onClose={fecharPopup} />
+                )}
             </div>
            
         </div>
