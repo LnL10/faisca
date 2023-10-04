@@ -21,22 +21,29 @@ export function CarrinhoProvider(props: any){
     const [itens, setItens] = useState<ItemCarrinho[]>([])
     const [itemSelecionado,setItemSelecionado]=useState<Produto>()
     
-    function adicionarProduto(produto:Produto){
-        const itemAtual =itens.find((item) => item.produto.id === produto.id) ?? {quantidade: 0, produto}
-        const novoItem = {...itemAtual, quantidade: itemAtual.quantidade + 1}
-        const outrosItens = itens.filter((item) => item.produto.id !== produto.id)
-        setItens([...outrosItens, novoItem])
+    function adicionarProduto(produto: Produto) {
+        const itemAtual = itens.find((item) => item.produto.id === produto.id && item.produto.tamanho === produto.tamanho);
+      
+        if (itemAtual) {
+          const novoItem = { ...itemAtual, quantidade: itemAtual.quantidade + 1 };
+          const outrosItens = itens.filter((item) => item !== itemAtual);
+          setItens([...outrosItens, novoItem]);
+        } else {
+          const novoItem = { quantidade: 1, produto };
+          setItens([...itens, novoItem]);
+        }
     }
 
     function removerProduto(produto: Produto) {
-        const novoItens = itens.filter((item) => item.produto.id !== produto.id);
+        const novoItens = itens.filter((item) => item.produto.id !== produto.id || item.produto.tamanho !== produto.tamanho);
         setItens(novoItens);
-      }
+    }
 
     function selecionarProduto(produto: Produto){
         setItemSelecionado(produto);
         console.log(itemSelecionado)
     }
+    
     return (
         <CarrinhoContext.Provider value={{itens,adicionarProduto,removerProduto,selecionarProduto,itemSelecionado}}>
             {props.children}

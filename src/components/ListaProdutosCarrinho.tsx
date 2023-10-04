@@ -10,10 +10,14 @@ interface ListaProdutosCarrinhoProps{
 
 
 export default function ListaProdutosCarrinho(props: ListaProdutosCarrinhoProps){
+    console.log(props.produtos)
     return(
         <div className="flex flex-wrap gap-5 items-center justify-center">
+            
+            
             {props.produtos.map((produto) => {
-                return <MostrarNoCarrinho key={1} produto={produto} remover={props.remover}/>
+                console.log(`${produto.produto.id}-${produto.produto.tamanho}`)
+                return <MostrarNoCarrinho key={`${produto.produto.id}-${produto.produto.tamanho}`} produto={produto} remover={props.remover}/>
             })}
         </div>
     )

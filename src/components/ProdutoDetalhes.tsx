@@ -12,12 +12,19 @@ import CarrinhoPopUp from "./Carrinho/CarrinhoPopUp"
 export default function ProdutoDetalhe(props: any){
 
     const {produto} = props
-    const [tamanho,setTamanho] = useState('');
+    const [tamanho,setTamanho] = useState('S');
     const [mostrarPopup, setMostrarPopup] = useState(false);
 
     const handleAdicionarAoCarrinho = () => {
         if (props.comprar) {
-          props.comprar(produto);
+         
+          const produtoComTamanho = {
+            ...produto,
+            tamanho: tamanho, 
+          };
+      
+          console.log(produtoComTamanho);
+          props.comprar(produtoComTamanho);
           setMostrarPopup(true);
         }
       };

@@ -4,4 +4,5 @@ export default interface Produto{
     preco: number;
     descricao: string;
     imagem: any;
+    tamanho?: string;
 }

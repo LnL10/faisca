@@ -26,8 +26,9 @@ export default function MostrarNoCarrinho(props: MostrarNoCarrinhoProps){
                 height={300}
                 className="rounded-md"
             />
-            <div>
-                Quantidade : {produto.quantidade}
+            <div className="flex flex-col">
+                <span>Tamanho: {produto.produto.tamanho}</span>
+                <span>Quantidade : {produto.quantidade}</span>
                 
             </div>
             <div className="flex flex-col gap-3">
