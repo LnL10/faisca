@@ -5,7 +5,8 @@ export default function Pagamento(props:any){
 
         <div>
             <div>PAGAMENTO</div>
-            <button onClick={props.back}>Voltar</button>
+            <button  className="botao bg-black" onClick={props.onComplete} > Pagar </button>
+            <button className="botao" onClick={props.back}>Voltar</button>
         </div>
             
     )

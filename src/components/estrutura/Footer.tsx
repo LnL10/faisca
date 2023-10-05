@@ -5,12 +5,15 @@ import { IconBrandFacebook, IconBrandFacebookFilled, IconBrandInstagram, IconBra
 export default function Footer(){
     return(
         <div className="flex bg-zinc-600 h-56 w-full ">
-            <div>
-                <span>Redes Sociais:</span>
+            <div className="p-10">
 
-                <div className="flex" ><IconBrandFacebook />Facebook</div>
-                <div className="flex"><IconBrandInstagram/>Instagram</div>
-                <div className="flex"><IconBrandTwitter/>Twitter</div>
+                <span className="font-black border ">Redes Sociais:</span>
+                    
+                <div className="flex gap-3 pt-5">
+                    <div className="flex" ><IconBrandFacebook /></div>
+                    <div className="flex"><IconBrandInstagram/></div>
+                    <div className="flex"><IconBrandTwitter/></div>
+                </div>
             
             </div>
         </div>

@@ -1,8 +1,6 @@
-import Carrinho from "@/components/Carrinho";
 import ProdutoDetalhe from "@/components/ProdutoDetalhes";
 import Layout from "@/components/estrutura/Layout";
 import CarrinhoContext from "@/context/CarrinhoContext";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import {useContext} from "react";
 

@@ -5,7 +5,9 @@ import CarrinhoCompra from "@/components/compra/CarrinhoCompra";
 import Layout from "@/components/estrutura/Layout";
 import CarrinhoContext from "@/context/CarrinhoContext";
 import Moeda from "@/utils/Moeda";
+import { Icon123, IconArrowBarToRight, IconArrowNarrowRight, IconCheck } from "@tabler/icons-react";
 import { useContext,useState } from "react";
+
 
 export default function PaginaEnvio(){
     const {itens} = useContext(CarrinhoContext)
@@ -23,7 +25,6 @@ export default function PaginaEnvio(){
       setCurrentStep('confirmacao');
     };
 
-    
     return(
         <Layout>
             
@@ -32,11 +33,40 @@ export default function PaginaEnvio(){
             
             <div className="flex flex-col w-2/3 bg-white-200 border border-zinc-700 justify-center items-center bg-white text-black">
                 
-            <span className="text-black pb-16 ">
-                <span className={currentStep === 'informacoes' ? 'underline' : ''}>INFORMAÇÕES</span> - 
-                <span className={currentStep === 'pagamento' ? 'underline' : ''}> PAGAMENTO</span> - 
-                <span className={currentStep === 'confirmacao' ? 'underline' : ''}> CONFIRMAÇÃO</span>
-            </span>
+            <div className="flex  text-black pb-16 gap-7 ">
+
+                <div className={`flex items-center gap-2 ${currentStep === 'informacoes' ? 'border-2 rounded-md border-black p-1 bg-zinc-200' : ''}`}>
+                    <div className="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center text-white text-xl font-semibold">
+                    {currentStep === 'pagamento' || currentStep === 'confirmacao' ? <IconCheck /> : <span>1</span>}
+                    </div>
+
+                    <span>INFORMAÇÕES</span>  
+
+                </div>
+
+                <div className="flex justify-center items-center">
+                    <IconArrowNarrowRight/>
+                </div>
+
+                <div className={`flex items-center gap-2 ${currentStep === 'pagamento' ? 'border-2 rounded-md border-black p-1 bg-zinc-200' : ''}`}>
+                    <div className="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center text-white text-xl font-semibold">
+                    {currentStep === 'confirmacao'  ? <IconCheck/> : <span>2</span>}
+                    </div>
+                    <span> PAGAMENTO</span> 
+                </div>
+
+                <div className="flex justify-center items-center">
+                    <IconArrowNarrowRight/>
+                </div>
+
+                <div className={`flex items-center gap-2 ${currentStep === 'confirmacao' ? 'border-2 rounded-md border-black p-1 bg-zinc-200' : ''}`}>
+                    <div className="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center text-white text-xl font-semibold">
+                        3
+                    </div>   
+                    <span> CONFIRMAÇÃO</span>
+                </div>
+            </div>
+
                 {currentStep === 'informacoes' && (
                     <Informacoes onComplete={handleInformacoesComplete} />
                 )}
@@ -44,7 +74,7 @@ export default function PaginaEnvio(){
                     <Pagamento onComplete={handlePagamentoComplete} back={handleInformacoes}/>
                 )}
 
-      {currentStep === 'confirmacao' && <Confirmacao />}
+      {currentStep === 'confirmacao' && <Confirmacao back={handleInformacoes}/>}
             </div>
 
 

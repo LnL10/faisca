@@ -16,7 +16,6 @@ export default function Header(){
                 <Link className="flex "href="/carrinho"><IconShoppingCart size={30}/><span className="rounded-full bg-zinc-200"></span>{quantidadeTotal}</Link>
                 
             </div>
-        
             <div>
                 <ul className="flex space-x-4 font-mono justify-evenly text-black">
                     <li><Link  className="botaoHeader" href="/">Inicio</Link></li>

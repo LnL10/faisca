@@ -6,7 +6,7 @@ export default function Informacoes(props:any){
         <div>
             <div className="flex justify-center items-center">
                     
-                    <form className="flex flex-col gap-4 ">
+                    <form className="flex flex-col gap-4 " >
                         
     
                         <span className="font-bold text-2xl">Contacto</span>
