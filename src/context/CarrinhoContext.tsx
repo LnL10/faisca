@@ -11,6 +11,7 @@ interface CarrinhoContextProps{
     itemSelecionado?:Produto
     setItemSelecionado?:(produto:Produto)=>void
     selecionarProduto?:(produto:Produto)=>void
+
 }
 
 const CarrinhoContext =createContext<CarrinhoContextProps>({} as any)
@@ -20,6 +21,7 @@ export function CarrinhoProvider(props: any){
 
     const [itens, setItens] = useState<ItemCarrinho[]>([])
     const [itemSelecionado,setItemSelecionado]=useState<Produto>()
+    const [search, setSearch] = useState("");
     
     function adicionarProduto(produto: Produto) {
         const itemAtual = itens.find((item) => item.produto.id === produto.id && item.produto.tamanho === produto.tamanho);
