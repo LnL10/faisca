@@ -41,7 +41,7 @@ export default function ProdutoDetalhe(props: any){
             
             <div>
             <Image 
-                src={produto.imagem} 
+                src={produto?.imagem} 
                 alt="Imagem"
                 width={300}
                 height={300}
@@ -51,9 +51,9 @@ export default function ProdutoDetalhe(props: any){
 
             <div className="flex flex-col gap-3 text-black">
                 
-                <span className="text-2xl font-black">{produto.nome}</span>
+                <span className="text-2xl font-black">{produto?.nome}</span>
                 <div className="flex flex-col">
-                    <span className="text-green-500 font-bold">{Moeda.formatar(produto.preco)}</span>
+                    <span className="text-green-500 font-bold">{Moeda.formatar(produto?.preco)}</span>
                     <span className="text-zinc-500 font-mono text-sm">Portes incluídos</span>
                 </div>  
                 <span className="font-serif text-sm">TAMANHO</span>
