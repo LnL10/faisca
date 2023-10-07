@@ -1,6 +1,8 @@
 import Image from "next/image";
 import footerImage from "./headerImage/faisca.png"
 import { IconBrandFacebook, IconBrandFacebookFilled, IconBrandInstagram, IconBrandTwitter, IconBrandWhatsapp, IconMail, IconRecordMail } from "@tabler/icons-react";
+import Link from "next/link";
+
 
 
 export default function Footer(){
@@ -13,9 +15,8 @@ export default function Footer(){
                     <span className="font-black border-b-2 text-lg ">Redes Sociais:</span>
                         
                     <div className="flex gap-3 pt-5">
-                        <div className="flex" ><IconBrandFacebook /></div>
-                        <div className="flex"><IconBrandInstagram/></div>
-                        <div className="flex"><IconBrandWhatsapp/></div>
+                        <a href="https://www.instagram.com/faiisca_store/" target="_blank"><IconBrandInstagram /></a>
+                        <a href="https://www.instagram.com/faiisca_store/" target="_blank"><IconBrandWhatsapp /></a>
                     </div>
                 </div>
 
@@ -33,7 +34,8 @@ export default function Footer(){
                         <div className="flex font-light" ><IconMail/>storefaisca0@gmail.com</div>
                         
                     </div>
-                </div>      
+                </div>    
+                  
                 
                 
             </div>

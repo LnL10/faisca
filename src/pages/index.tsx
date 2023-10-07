@@ -1,12 +1,10 @@
-import Header from '@/components/estrutura/Header'
 import ListaProdutos from '@/components/ListaProdutos'
 import { useContext } from 'react'
 import CarrinhoContext from '@/context/CarrinhoContext'
 import produtos2 from "@/data/produtos2"
 import Faq from '@/components/Faq/Faq'
 import Layout from '@/components/estrutura/Layout'
-import ligas from '@/data/ligas'
-import ListaLigas from '@/components/ligas/ListaLigas'
+
 
 
 
@@ -31,8 +29,7 @@ export default function Home() {
             <Faq/>
           </div>
       </div>
-      <ListaLigas ligas={ligas}/>
-      
+
     </Layout>
       
     )

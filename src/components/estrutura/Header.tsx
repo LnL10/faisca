@@ -24,7 +24,7 @@ export default function Header(){
         });
       };
 
-      const [search, setSearch] = useState("");
+    const [search, setSearch] = useState("");
 
 
     
@@ -34,26 +34,37 @@ export default function Header(){
     return(
         <div className="flex flex-col bg-white h-48 gap-5 border-b-2 border border-black">
             
-            <div className="flex items-center justify-around w-screen gap-8 text-black">
-                <div className="flex items-center">
-                    <IconSearch size={30}/>
-                    <form onSubmit={handleSubmit}>
-                        <input type="text" className="ph" placeholder="Pesquisar"   onChange={(e) => {setSearch(e.target.value.toLowerCase());}}/>
-                    </form>
-                    <div className="flex ">
-                        
-
-            </div>
+            <div className="flex items-center  w-screen gap-8 text-black px-20">
+                <div className="flex items-center flex-1">
+                        <IconSearch size={30} />
+                        <form onSubmit={handleSubmit}>
+                            <input
+                            type="text"
+                            className="ph"
+                            placeholder="Pesquisar"
+                            onChange={(e) => {
+                                setSearch(e.target.value.toLowerCase());
+                            }}
+                              />
+                        </form>
                 </div>
-                <Link href="/" className=""><Image src={headerImage} width={130} height={200} alt="bgImage"/></Link>
-                <Link className="flex "href="/carrinho"><IconShoppingCart size={30}/><span className="rounded-full bg-zinc-200"></span>{quantidadeTotal}</Link>
+                
+                <div className="flex items-center justify-center flex-1"> 
+                    <Link href="/" className=""><Image src={headerImage} width={130} height={200} alt="bgImage"/></Link>
+                </div>
+                <div className="flex flex-1 justify-end">
+
+                    <Link className="flex "href="/carrinho"><IconShoppingCart size={30}/><span className="rounded-full bg-zinc-200"></span>{quantidadeTotal}</Link>
+                </div>
 
             </div>
-            <div>
-                <ul className="flex space-x-4 font-mono justify-evenly text-black">
+            
+            <div className="">
+                <ul className="flex font-mono justify-evenly text-black">
                     <li><Link  className="botaoHeader" href="/">Inicio</Link></li>
                     |
                     <li><Link  className="botaoHeader" href="/produtos">Produtos</Link></li>
+                    
                     |
                     <li><Link  className="botaoHeader" href="/produtos">Contactos</Link></li>
                 </ul>
@@ -61,7 +72,7 @@ export default function Header(){
 
             
                      
-        </div>
+    </div>
            
         
     )

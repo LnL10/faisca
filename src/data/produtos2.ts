@@ -1,5 +1,6 @@
 import Produto from "@/models/Produto";
-import ImageReal from "./images/teste.jpg"
+import RealMadrid from "./images/RealMadrid.jpg"
+import Barcelona from "./images/Barcelona.jpg"
 
 const produtos2: Produto[]=[
     {
@@ -8,7 +9,7 @@ const produtos2: Produto[]=[
         preco:25,
         ligaId:2,
         descricao:"Camisola Real Madrid",
-        imagem: ImageReal,
+        imagem: RealMadrid,
     },
     {
         id:9,
@@ -16,7 +17,7 @@ const produtos2: Produto[]=[
         preco:25,
         ligaId:2,
         descricao:"Camisola Barcelona",
-        imagem:ImageReal,
+        imagem:Barcelona,
     },
     
 ]

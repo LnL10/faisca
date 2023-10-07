@@ -17,7 +17,7 @@
 
 .botaoHeader{
     @apply hover:bg-red-500 rounded-md px-10 py-2;
-    @apply border border-black
+    @apply border border-black bg-white
 }
 
 .pergunta{
@@ -25,4 +25,27 @@
     @apply hover:bg-zinc-200;
     @apply hover:underline;
     @apply p-5 select-none flex justify-between;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    position: absolute;
+    right: 50%;
+}
+
+.dropdown-menu {
+    display: none;
+    list-style: none;
+    position: absolute;
+    z-index: 1; 
+}
+
+.dropdown-menu li {
+    display: block;
+    margin: 0;
+    padding: 10px;
+}
+
+.dropdown-menu li:last-child {
+    border-bottom: none;
 }

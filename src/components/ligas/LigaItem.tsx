@@ -20,6 +20,7 @@ export default function LigaItem(props: LigaItemProps){
                 alt="Imagem"
                 width={200}
                 height={200}
+                style={{ maxWidth: '200px', maxHeight: '200px'}}
                 className="rounded-md"
             />
             <div className="flex flex-col justify-center items-center">
