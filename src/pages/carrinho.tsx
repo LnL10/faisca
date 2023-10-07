@@ -14,6 +14,7 @@ export default function PaginCarrinho(){
             <div className="flex flex-col items-center pt-6 pb-10 h-screen">
                 
                 <Carrinho itens={itens}/>
+                
 
                 <ListaProdutosCarrinho produtos={itens} remover={removerProduto}/>
             </div>

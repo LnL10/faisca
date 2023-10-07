@@ -15,6 +15,7 @@ export default function Home() {
   
   return (
     <Layout>
+      <span className='text-black'>FAISCA</span>
       <div className='flex flex-col bg-white'>
           <h1 className="flex justify-center p-3 text-xl font-extrabold text-gray-900 dark:text-white md:text-3xl lg:text-5xl">
             <span className="text-transparent pb-2 bg-clip-text bg-gradient-to-r from-red-600 via-black to-red-600 ">
