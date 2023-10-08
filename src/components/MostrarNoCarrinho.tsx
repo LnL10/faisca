@@ -16,7 +16,7 @@ export default function MostrarNoCarrinho(props: MostrarNoCarrinhoProps){
         <div className={`
             flex flex-col rounded-md
             border border-zinc-200
-            p-1 bg-zinc-900
+            p-1 bg-zinc-900 text-white
 
         `}>
             <Image 
