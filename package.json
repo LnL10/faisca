@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@stripe/stripe-js": "^2.1.7",
     "@tabler/icons-react": "^2.34.0",
     "@types/node": "20.6.2",
     "@types/react": "18.2.21",
@@ -25,6 +26,7 @@
     "react-dropdown": "^1.11.0",
     "react-router-dom": "^6.16.0",
     "react-whatsapp-widget": "^2.2.0",
+    "stripe": "^13.10.0",
     "typescript": "5.2.2"
   },
   "devDependencies": {

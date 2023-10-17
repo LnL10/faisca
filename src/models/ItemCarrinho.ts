@@ -1,7 +1,7 @@
 import Produto from "./Produto";
 
 export default interface ItemCarrinho{
-    produto: Produto
+    produto: any
     quantidade: number
     
 }

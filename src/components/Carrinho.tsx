@@ -7,13 +7,13 @@ import Produto from "@/models/Produto";
 
 interface CarrinhoProps{
     itens: ItemCarrinho[]
-    remover?: (produto: Produto)=> void
+    remover?: (produto: any)=> void
 }
 
 
 
 export default function Carrinho(props: CarrinhoProps){
-    const total = props.itens.reduce((soma,item)=> {return soma + item.quantidade * item.produto.preco}, 0)
+    const total = props.itens.reduce((soma,item)=> {return soma + item.quantidade * item.produto.unit_amount}, 0)
 
     return(
         <div className="flex flex-col border-2 mb-5 border-black rounded-md overflow-hidden w-4/5 bg-zinc-300 text-black" >

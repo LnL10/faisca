@@ -7,10 +7,10 @@ import { createContext, useState } from "react"
 interface CarrinhoContextProps{
     itens:ItemCarrinho[]
     adicionarProduto:(produto: Produto) => void
-    removerProduto?:(produto: Produto)=>void
-    itemSelecionado?:Produto
-    setItemSelecionado?:(produto:Produto)=>void
-    selecionarProduto?:(produto:Produto)=>void
+    removerProduto?:(produto: any)=>void
+    itemSelecionado?:any
+    setItemSelecionado?:(produto:any)=>void
+    selecionarProduto?:(produto:any)=>void
 
 }
 

@@ -3,15 +3,16 @@ import ProdutoItem from "./ProdutoItem"
 import Link from "next/link"
 
 interface ListaProdutosProps{
-    produtos:Produto[]
+    produtos:any[]
     comprar:(produto: Produto) => void
 }
 
 export default function ListaProdutos(props: ListaProdutosProps){
+    console.log(props)
     return(
         <div className="flex flex-wrap gap-5 items-center justify-center ">
             {props.produtos.map((produto) => (
-                <Link href={`/product/${produto.nome}`} key={produto.id}>
+                <Link href={`/product/${produto.product.id}`} key={produto.product.id}>
                     <ProdutoItem produto={produto} comprar={props.comprar}/>
                 </Link>
             ))}

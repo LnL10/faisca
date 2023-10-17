@@ -7,7 +7,7 @@ import Link from "next/link";
 import {useContext} from "react"
 
 interface ProdutoItemProps{
-    produto: Produto
+    produto: any
     comprar?: (produto: Produto)=> void
 }
 
@@ -15,6 +15,10 @@ interface ProdutoItemProps{
 export default function ProdutoItem(props: ProdutoItemProps){
     const {selecionarProduto} = useContext(CarrinhoContext)
     const {produto} = props
+
+    console.log(produto.unit_amount)
+
+
     return(
         <div className={`
             flex flex-col rounded-xl 
@@ -25,7 +29,7 @@ export default function ProdutoItem(props: ProdutoItemProps){
 
         `}>
             <Image 
-                src={produto.imagem} 
+                src={produto.product.images[0]} 
                 alt="Imagem"
                 width={200}
                 height={200}
@@ -34,8 +38,8 @@ export default function ProdutoItem(props: ProdutoItemProps){
             />
             <div className="flex flex-col justify-center items-center">
                 
-                <div className="text-lg text-black font-semibold">{produto.nome}</div>
-                <div className="text-green-500 font-bold">{Moeda.formatar(produto.preco)}</div>
+                <div className="text-lg text-black font-semibold">{produto.product.name}</div>
+                <div className="text-green-500 font-bold">{Moeda.formatar(produto.unit_amount/100)}</div>
 
                 <div>
                     <button className="botao flex w-full justify-center gap-2" 

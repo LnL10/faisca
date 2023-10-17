@@ -6,11 +6,11 @@ import Image from "next/image";
 
 interface MostrarNoCarrinhoProps{
     produto: ItemCarrinho
-    comprar?: (produto: Produto)=> void
-    remover?: (produto: Produto)=> void
+    comprar?: (produto: any)=> void
+    remover?: (produto: any)=> void
 }
 
-export default function MostrarNoCarrinho(props: MostrarNoCarrinhoProps){
+export default function MostrarNoCarrinho(props: any){
     const {produto} = props
     return(
         <div className={`
@@ -20,7 +20,7 @@ export default function MostrarNoCarrinho(props: MostrarNoCarrinhoProps){
 
         `}>
             <Image 
-                src={produto.produto.imagem} 
+                src={produto.produto.images[0]} 
                 alt="Imagem"
                 width={300}
                 height={300}

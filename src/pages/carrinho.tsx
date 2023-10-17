@@ -8,7 +8,7 @@ import { useContext } from "react";
 
 export default function PaginCarrinho(){
     const {itens,removerProduto} = useContext(CarrinhoContext)
-
+    console.log(itens)
     return(
         <Layout >
             <div className="flex flex-col items-center pt-6 pb-10 h-screen">

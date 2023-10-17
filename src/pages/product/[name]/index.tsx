@@ -4,20 +4,15 @@ import CarrinhoContext from "@/context/CarrinhoContext";
 import { useRouter } from "next/router";
 import {useContext} from "react";
 
-import produtos from "@/data/produtos";
-import produtos2 from "@/data/produtos2";
+
+import Stripe from "stripe";
 
 
-export default function VerProduto(){
+export default function VerProduto({produtoEncontrado}){
 
 
     const {adicionarProduto} = useContext(CarrinhoContext)
-    
-    const router = useRouter();
-    const {name} = router.query;
 
-    const produtoEncontrado = produtos.find((produto) => produto.nome === name) || produtos2.find((produto) => produto.nome === name);
-     
     
     return(
         <Layout>
@@ -27,3 +22,19 @@ export default function VerProduto(){
         </Layout>
     )
 }
+
+
+export async function getServerSideProps({ params }) {
+    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+  
+    
+    const produtoId = params.name;
+    console.log(produtoId)
+    const produtoEncontrado = await stripe.products.retrieve(produtoId);
+  
+    return {
+      props: {
+        produtoEncontrado,
+      },
+    };
+  }

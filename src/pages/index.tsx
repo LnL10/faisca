@@ -4,14 +4,16 @@ import CarrinhoContext from '@/context/CarrinhoContext'
 import produtos2 from "@/data/produtos2"
 import Faq from '@/components/Faq/Faq'
 import Layout from '@/components/estrutura/Layout'
+import Stripe from 'stripe'
 
 
 
 
 
-
-export default function Home() {
+export default function Home({ prices  }) {
   const {adicionarProduto} = useContext(CarrinhoContext)
+
+  console.log(prices);
   
   return (
     <Layout>
@@ -22,8 +24,7 @@ export default function Home() {
               </span>
             </h1>
 
-
-            <ListaProdutos produtos={produtos2} comprar={adicionarProduto}/>
+            <ListaProdutos produtos={prices} comprar={adicionarProduto}/>
             <span className='flex justify-center text-black font-black pt-10'>PERGUNTAS FREQUENTES</span>
             <div className=' flex justify-center pt-5 pb-10'>
               <Faq/>
@@ -33,4 +34,19 @@ export default function Home() {
     </Layout>
       
     )
+}
+
+export async function getServerSideProps() {
+  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+  const { data: prices } = await stripe.prices.list({
+    active: true,
+    limit: 10,
+    expand: ['data.product'],
+  });
+
+  return {
+    props: {
+      prices,
+    },
+  };
 }
