@@ -8,7 +8,7 @@ import {useContext} from "react";
 import Stripe from "stripe";
 
 
-export default function VerProduto({produtoEncontrado}){
+export default function VerProduto({produtoEncontrado,precoEncontrado}){
 
 
     const {adicionarProduto} = useContext(CarrinhoContext)
@@ -17,7 +17,7 @@ export default function VerProduto({produtoEncontrado}){
     return(
         <Layout>
             <div className="flex justify-center h-screen">
-            <ProdutoDetalhe produto={produtoEncontrado} comprar={adicionarProduto}/>
+            <ProdutoDetalhe produto={produtoEncontrado} comprar={adicionarProduto} precoEncontrado={precoEncontrado}/>
             </div>
         </Layout>
     )
@@ -30,11 +30,17 @@ export async function getServerSideProps({ params }) {
     
     const produtoId = params.name;
     console.log(produtoId)
+
     const produtoEncontrado = await stripe.products.retrieve(produtoId);
+    const priceId = produtoEncontrado.default_price;
   
+    // Busque o preço com base no ID do preço
+    const precoEncontrado = await stripe.prices.retrieve(priceId);
+
     return {
       props: {
         produtoEncontrado,
+        precoEncontrado,
       },
     };
   }

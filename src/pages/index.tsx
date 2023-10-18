@@ -38,9 +38,9 @@ export default function Home({ prices  }) {
 
 export async function getServerSideProps() {
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+  
   const { data: prices } = await stripe.prices.list({
     active: true,
-    limit: 10,
     expand: ['data.product'],
   });
 

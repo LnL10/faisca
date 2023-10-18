@@ -8,7 +8,7 @@ import Link from "next/link";
 export default function Footer(){
     return(
         
-            <div className="flex gap-20 px-10 py-5 bg-zinc-600 justify-between h-56 w-full mt-10 ">
+            <div className="flex gap-20 px-10 py-5 bg-zinc-600 justify-between h-56 w-full">
                 
 
                 <div>

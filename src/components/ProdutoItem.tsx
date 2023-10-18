@@ -16,7 +16,6 @@ export default function ProdutoItem(props: ProdutoItemProps){
     const {selecionarProduto} = useContext(CarrinhoContext)
     const {produto} = props
 
-    console.log(produto.unit_amount)
 
 
     return(

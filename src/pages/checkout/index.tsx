@@ -11,7 +11,7 @@ import { useContext,useState } from "react";
 
 export default function PaginaEnvio(){
     const {itens} = useContext(CarrinhoContext)
-    const total = itens.reduce((soma,item)=> {return soma + item.quantidade * item.produto.preco}, 0)
+    const total = itens.reduce((soma,item)=> {return soma + item.quantidade * item.preco}, 0)
     const [currentStep, setCurrentStep] = useState('informacoes');
 
     const handleInformacoesComplete = () => {
@@ -91,7 +91,7 @@ export default function PaginaEnvio(){
                     </div>
                     <div className="flex justify-between w-2/4">
                         <span>Total</span>
-                        <span>{Moeda.formatar(total)}</span>
+                        <span>{Moeda.formatar(total/100)}</span>
                     </div>
                 </div>
             </div>
